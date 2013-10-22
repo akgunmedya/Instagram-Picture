@@ -285,7 +285,7 @@ function widget($instance, $instagram)
 			// Tabelle der Bilder
 			$table_name_bilder = $wpdb->prefix . "instagram_bilder";	
 			
-			foreach( $wpdb->get_results("SELECT * FROM $table_name_bilder ORDER BY id DESC LIMIT $limit") as $key => $row) 
+			foreach( $wpdb->get_results("SELECT * FROM $table_name_bilder WHERE status ='0' ORDER BY id DESC LIMIT $limit") as $key => $row) 
    		{
    			$url = $row->low_resolution;
    			$standard_resolution 	= $row->standard_resolution;

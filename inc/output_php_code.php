@@ -35,7 +35,7 @@ function instagram_header() {
 		$limit = $anzahl;
 	
 		// Output of the images (but only outputting so many pictures that are actually required)
-		foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[101] ORDER BY id DESC LIMIT $limit") as $key => $row) 
+		foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[101] WHERE status ='0' ORDER BY id DESC LIMIT $limit") as $key => $row) 
    	{
    		$low_resolution			= $row->low_resolution;
    		$standard_resolution 	= $row->standard_resolution;

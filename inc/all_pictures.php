@@ -20,14 +20,24 @@ function instagram_picture_alle_bilder() {
 		if($num_bilder != "0")
 		{	
 			echo '<div class="instagram-picture-box"><h2>All Pictures</h2>';
+			
+			// Changes whether public or not
+			if(isset($_POST['picid']))
+			{
+				$picid 				= $_POST['picid'];
+				$picid_status		= $_POST['picid_status'];
+		
+				$wpdb->query("UPDATE $instagram_picture_variable[101] Set status = '$picid_status' WHERE id = '$picid'");
+			}
 	
 			$i=1;		
 			// Spend existing images
 			foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[101] ORDER BY id DESC") as $key => $row) 
 			{
-				$url = $row->thumbnail;
-				$title = $row->text;  
-				$id = $row->id;  				
+				$url 			= $row->thumbnail;
+				$title 		= $row->text;  
+				$id 			= $row->id;  				
+				$status 		= $row->status;
 		
 				$class = ($i % 2) ? "FFFFFF" : "E0E0E0";
 		
@@ -36,7 +46,25 @@ function instagram_picture_alle_bilder() {
 				<table style="float:left;border: 1px solid; margin:5px;background-color:#'.$class.';">
 					<tr>
 						<td><img src="'.$url.'" title="'.$title.'" width="80px" /></td>
-						<td>'.$id.'</td>
+						<td>'.$id.'<br />
+						<form action="" id="instagram" method="post">
+							<input type="hidden" name="picid" value="'.$id.'">';
+						if($status == "0")
+						{
+							echo '
+							<input type="hidden" name="picid_status" value="1">
+							<input type="submit" class="instagram-picture-success-button" value="public">
+							';	
+						}
+						if($status == "1")
+						{
+							echo '
+							<input type="hidden" name="picid_status" value="0">
+							<input type="submit" class="instagram-picture-danger-button" value="not public">
+							';	
+						}
+						echo '</form>
+						</td>
 					</tr>
 				</table>';
 		

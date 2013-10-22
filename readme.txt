@@ -82,9 +82,10 @@ No. This plugin only saves the path to the picture in the database. The image it
 6. Widget User-Info
 
 == Upgrade Notice ==
-= Version 2.0 (October xx, 2013) =
+= Version 2.0 =
 * New Module: Widget (User-Infos);
 * New Module: Lightbox;
+* New Module: Remove images (public or not public);
 * Improvement: Code revision;
 * Improvement: 15 new Styles (Widget);
 * Improvement: Admin-Page Style;
@@ -97,6 +98,7 @@ No. This plugin only saves the path to the picture in the database. The image it
 = Version 2.0 (October xx, 2013) =
 * New Module: Widget (User-Infos)
 * New Module: Lightbox
+* New Module: Remove images (public or not public)
 * Improvement: Code revision
 * Improvement: 15 new Styles (Widget)
 * Improvement: Admin-Page Style

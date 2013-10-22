@@ -83,6 +83,26 @@ License: GPLv2 or later
 	
 				// predefined entries
 				$wpdb->query("INSERT INTO $table_name (id) VALUES ('1')"); // ID setzung
+				
+			// table name instagram-bilder
+			$table_name = $wpdb->prefix . "instagram_bilder";
+   
+   			// status add!
+   			$sql = "CREATE TABLE $table_name (
+  				id bigint NOT NULL,
+  				status int(1) NOT NULL,
+  				link text NOT NULL,
+  				text text NOT NULL,
+  				thumbnail text NOT NULL, 
+  				low_resolution text NOT NULL, 
+  				standard_resolution text NOT NULL, 
+  				pic_like int(11) NOT NULL, 
+  				pic_comment int(11) NOT NULL, 
+  				UNIQUE KEY id (id)
+				);";
+
+				require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+				dbDelta( $sql );
 	}
 
 ########################################################################################################################
@@ -130,6 +150,7 @@ License: GPLv2 or later
    	// creating a table
    	$sql = "CREATE TABLE $table_name (
   			id bigint NOT NULL,
+  			status int(1) NOT NULL,
   			link text NOT NULL,
   			text text NOT NULL,
   			thumbnail text NOT NULL, 

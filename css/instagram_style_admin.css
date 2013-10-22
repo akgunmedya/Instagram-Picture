@@ -54,6 +54,7 @@
 }
 .instagram-picture-success-button
 {
+	display: inline-block;
 	padding: 6px 12px;
 	font-size: 14px;
 	font-weight: normal;
@@ -66,9 +67,40 @@
 	border-radius: 4px 4px 4px 4px;
 	-moz-user-select: none;
 	color: rgb(255, 255, 255);
-	background-color: rgb(92, 184, 92);
-	border-color: rgb(76, 174, 76);	
+	background-color: #5cb85c;
+	border-color: #4cae4c;
 	text-decoration: none;
+}
+.instagram-picture-success-button:hover
+{
+	color: #ffffff;
+	background-color: #47a447;
+	border-color: #398439;	
+}
+.instagram-picture-danger-button
+{
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px 4px 4px 4px;
+	-moz-user-select: none;
+	color: rgb(255, 255, 255);
+	background-color: #d9534f;
+	border-color: #d43f3a;
+	text-decoration: none;
+}
+.instagram-picture-danger-button:hover
+{
+	color: #ffffff;
+	background-color: #d2322d;
+	border-color: #ac2925;
 }
 
 .instagram-picture-box-in
