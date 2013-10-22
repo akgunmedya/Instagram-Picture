@@ -27,21 +27,21 @@ function instagram_picture_konfiguration()
 						<hr />
 						
 						<div class="row-instagram_admin">
-							<div class="col-instagram-3_admin instagram-picture-box-in">
+							<div class="col-instagram-5_admin instagram-picture-box-in">
 								<h2>Connect Instagram account</h2>
 									<a href="http://tb-webtec.de/instagram_picture/login.php" target="_blank">Here you will find the information.</a>	
 										<form action="" id="instagram" method="post">
 											<ul>
 												<li>
-													<label for="instagram_id"><b>Instagram-ID:</b></label>
-													<input type="text" name="instagram_id" id="instagram_id" value="'.$result_id.'" style="width:400px" />
+													<label for="instagram_id"><b>Instagram-ID:</b></label><br />
+													<input type="text" name="instagram_id" id="instagram_id" value="'.$result_id.'" style="width:100%;" />
 												</li>
 												<li>
-													<label for="instagram_access"><b>Access-Token:</b></label>
-													<input type="text" name="instagram_access" id="instagram_access" value="'.$result_access.'" style="width:400px" />
+													<label for="instagram_access"><b>Access-Token:</b></label><br />
+													<input type="text" name="instagram_access" id="instagram_access" value="'.$result_access.'" style="width:100%;" />
 												</li>
 												<li>
-													<button type="submit" style="padding: 6px 12px;font-size: 14px;font-weight: normal;line-height: 1.42857;text-align: center;white-space: nowrap;vertical-align: middle;cursor: pointer;border: 1px solid transparent;border-radius: 4px 4px 4px 4px;-moz-user-select: none;color: rgb(255, 255, 255);background-color: rgb(92, 184, 92);border-color: rgb(76, 174, 76);">Save</button>
+													<button type="submit" class="instagram-picture-success-button">Save</button>
 												</li>
 											</ul>
 											<input type="hidden" name="submitted" id="submitted" value="true" />

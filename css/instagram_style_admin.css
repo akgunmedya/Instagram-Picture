@@ -52,6 +52,24 @@
 	border-radius: 4px;
 	font-size: 13px;
 }
+.instagram-picture-success-button
+{
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px 4px 4px 4px;
+	-moz-user-select: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(92, 184, 92);
+	border-color: rgb(76, 174, 76);	
+	text-decoration: none;
+}
 
 .instagram-picture-box-in
 {

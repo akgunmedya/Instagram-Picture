@@ -124,7 +124,7 @@ function instagram_picture_php_code() {
       	echo '
     					</select>
     				<br /><br />
-				<button type="submit" style="padding: 6px 12px;font-size: 14px;font-weight: normal;line-height: 1.42857;text-align: center;white-space: nowrap;vertical-align: middle;cursor: pointer;border: 1px solid transparent;border-radius: 4px 4px 4px 4px;-moz-user-select: none;color: rgb(255, 255, 255);background-color: rgb(92, 184, 92);border-color: rgb(76, 174, 76);">Save</button>
+				<button type="submit" class="instagram-picture-success-button">Save</button>
 			</form>
 			</div>
 		</div>
@@ -304,7 +304,7 @@ function instagram_picture_php_code() {
 			########################################################################################################################
 
  		 		echo '						
-					<button style="padding: 6px 12px;font-size: 14px;font-weight: normal;line-height: 1.42857;text-align: center;white-space: nowrap;vertical-align: middle;cursor: pointer;border: 1px solid transparent;border-radius: 4px 4px 4px 4px;-moz-user-select: none;color: rgb(255, 255, 255);background-color: rgb(92, 184, 92);border-color: rgb(76, 174, 76);" type="submit">Save</button>
+					<button class="instagram-picture-success-button" type="submit">Save</button>
 				</form>
 				<hr />
 				</div>

@@ -74,6 +74,7 @@ function instagram_picture_instagram()
 							<a href="http://www.facebook.com/TbWebtec" target="_blank"><img src="'.$instagram_picture_variable["11"].'img/facebook.png" title="Facebook TB-WebTec" /></a>
 							<a href="http://twitter.com/Tobias_Bohn" target="_blank"><img src="'.$instagram_picture_variable["11"].'img/twitter.png" title="Twitter Tobias_Bohn" /></a>
 							<a href="http://tb-webtec.de/blog/" target="_blank"><img src="'.$instagram_picture_variable["11"].'img/wordpress.png" title="Blog" /></a>
+							<a href="https://github.com/TB-WebTec/Instagram-Picture" target="_blank"><img src="'.$instagram_picture_variable["11"].'img/github.png" title="GitHub" /></a>
 							<p>Follow us so that you\'re always on the running.</p>
 							
 					</div>

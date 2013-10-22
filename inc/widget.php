@@ -21,7 +21,7 @@ function instagram_picture_widget() {
 		<style>
 			.box
 			{
-				width: 30%;
+				width: 40%;
 				float: left;
 			}
 			.box td
@@ -95,7 +95,7 @@ function instagram_picture_widget() {
 							<b>With Picture:</b> - Yes or No (Standard: No)<br />
 							<b>Picture linkable</b> - Linking to Instagram Page or Lightbox <br />
 							(Test-Style width 250px; Picture: Yes, Link: Yes)
-							<div style="width:250px;">
+							<div style="width:250px;margin:0 auto;">
 							';
 							foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[102] WHERE ID ='1'") as $key => $row) 
    						{

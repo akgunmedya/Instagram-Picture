@@ -29,9 +29,16 @@ function instagram_picture_aktualisieren()
 				echo '
 					<div class="instagram-picture-box">
 						<h2>Update Instagram photos</h2>
-						<a href="?page=instagram_picture_aktualisieren&code=go" style="padding: 6px 12px;font-size: 14px;font-weight: normal;line-height: 1.42857;text-align: center;white-space: nowrap;vertical-align: middle;cursor: pointer;border: 1px solid transparent;border-radius: 4px 4px 4px 4px;-moz-user-select: none;color: rgb(255, 255, 255);background-color: rgb(92, 184, 92);border-color: rgb(76, 174, 76);">Update images</a>
+						<a href="?page=instagram_picture_aktualisieren&code=go" class="instagram-picture-success-button">Update images</a>
 						<p>This procedure needs eventually more times.</p>
-				</div>';
+					</div>';
+					
+				echo '
+					<div class="instagram-picture-box">
+						<h2>Automatic update</h2>
+						<p>On GitHub-Site, we have created a file, that even updates the images with a few adjustments.</p>
+						<p>GitHub-Site: <a href="http://github.com/TB-WebTec/Instagram-Picture-auto-update">http://github.com/TB-WebTec/Instagram-Picture-auto-update</a></p>
+					</div>';
 			}
 			
 			// Output if $go not isset
