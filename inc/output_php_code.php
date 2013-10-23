@@ -56,10 +56,20 @@ function instagram_header() {
 			// Link on; Fancybox off
 			if($result_link == "1")
 			{
+				$link_anfang = '<a href="'.$link.'" target="_blank"'.$title_ausgabe.'>';
+				$link_ende = '</a>';
+			}
+			if($result_link == "3")
+			{
 				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$link.'" target="_blank"'.$title_ausgabe.'>';
 				$link_ende = '</a></div>';
 			}
 			if($result_link == "2")
+			{
+					$link_anfang = '<a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_php_code" data-lightbox="roadtrip" title="'.$title.'">';
+					$link_ende = '</a>';
+			}
+			if($result_link == "4")
 			{
 					$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_php_code" data-lightbox="roadtrip" title="'.$title.'">';
 					$link_ende = '</a></div>';
