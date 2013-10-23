@@ -86,8 +86,8 @@ function instagram_picture_php_code() {
 			// Check which ID with name (for output)
 			if($result_link == "0"){ $result_link_output="Do Nothing";}
 			if($result_link == "1"){ $result_link_output="Original Page";}
-			if($result_link == "3"){ $result_link_output="Original Page with hover-effect";}
-			if($result_link == "2"){ $result_link_output="Lightbox";}
+			if($result_link == "2"){ $result_link_output="Original Page with hover-effect";}
+			if($result_link == "3"){ $result_link_output="Lightbox";}
 			if($result_link == "4"){ $result_link_output="Lightbox with hover-effect";}
 	
 			// form settins
@@ -100,8 +100,8 @@ function instagram_picture_php_code() {
 							<option value="'.$result_link.'">'.$result_link_output.'</option>';
     				  		if($result_link != "0"){echo '<option value="0">Do Nothing</option>';}
       					if($result_link != "1"){echo '<option value="1">Original Page</option>';}
-      					if($result_link != "3"){echo '<option value="3">Original Page with hover-effect</option>';}
-      					if($result_link != "2"){echo '<option value="2">Lightbox</option>';}
+      					if($result_link != "2"){echo '<option value="3">Original Page with hover-effect</option>';}
+      					if($result_link != "3"){echo '<option value="2">Lightbox</option>';}
       					if($result_link != "4"){echo '<option value="4">Lightbox with hover-effect</option>';}
       	echo '
     					</select>

@@ -40,7 +40,9 @@ function instagram_header() {
    		$low_resolution			= $row->low_resolution;
    		$standard_resolution 	= $row->standard_resolution;
 			$title 						= $row->text;
-			$link 						= $row->link;    				
+			$link 						= $row->link;   
+			
+			$title = utf8_decode($title); 				
     	
 			if($i < "10")
 			{
@@ -59,12 +61,12 @@ function instagram_header() {
 				$link_anfang = '<a href="'.$link.'" target="_blank"'.$title_ausgabe.'>';
 				$link_ende = '</a>';
 			}
-			if($result_link == "3")
+			if($result_link == "2")
 			{
 				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$link.'" target="_blank"'.$title_ausgabe.'>';
 				$link_ende = '</a></div>';
 			}
-			if($result_link == "2")
+			if($result_link == "3")
 			{
 					$link_anfang = '<a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_php_code" data-lightbox="roadtrip" title="'.$title.'">';
 					$link_ende = '</a>';

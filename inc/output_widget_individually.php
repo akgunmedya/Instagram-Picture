@@ -27,17 +27,21 @@ function form($config)
     
     <?php
    	   if($config['link'] == "0" OR empty($config['link'])){ $result_link_output="Do Nothing"; $config['link']="0";}
-			if($config['link'] == "1"){ $result_link_output="Original Page (Instagram)";}
-			if($config['link'] == "2"){ $result_link_output="Lightbox";}
+			if($config['link'] == "1"){ $result_link_output="Original Page";}
+			if($config['link'] == "2"){ $result_link_output="Original Page with hover-effect";}
+			if($config['link'] == "3"){ $result_link_output="Lightbox";}
+			if($config['link'] == "4"){ $result_link_output="Lightbox with hover-effect";}
     ?>
     <label for="<?php echo $this->get_field_id("link");?>">
     <p>Picture linkable:<br>
     	<select name="<?php echo  $this->get_field_name("link"); ?>" size="1">
 							<option value="<?php echo $config['link']; ?>"><?php echo $result_link_output; ?></option>
     				  		<?php if($config['link'] != "0"){echo '<option value="0">Do Nothing</option>';}
-      					if($config['link'] != "1"){echo '<option value="1">Original Page (Instagram)</option>';}
-      					if($config['link'] != "2"){echo '<option value="2">Lightbox</option>';} ?>
-      	echo '
+      					if($config['link'] != "1"){echo '<option value="1">Original Page</option>';}
+      					if($config['link'] != "2"){echo '<option value="2">Original Page with hover-effect</option>';}
+      					if($config['link'] != "3"){echo '<option value="3">Lightbox</option>';}
+      					if($config['link'] != "4"){echo '<option value="4">Lightbox with hover-effect</option>';} 
+     						?>
     					</select>
     </p>
     </label>
@@ -132,16 +136,29 @@ function widget($instance, $instagram)
 		 $title = $row->text;
 		 $link = $row->link;
 		 
+		 $title = utf8_decode($title); 	
+		 
 		 echo "<!-- Instagram Picture -->\n";
 		 echo "<!-- http://wordpress.org/plugins/instagram-picture/ -->\n";
 		 
 			if($result_link == "1")
 			{
+				$link_anfang = '<a href="'.$link.'" target="_blank">';
+				$link_ende = '</a>';
+			}
+			if($result_link == "2")
+			{
 				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$link.'" target="_blank">';
 				$link_ende = '</a></div>';
 			}
 		
-			if($result_link == "2")
+			if($result_link == "3")
+			{
+				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
+				$link_anfang = '<a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
+				$link_ende = '</a>';
+			}
+			if($result_link == "4")
 			{
 				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
 				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
