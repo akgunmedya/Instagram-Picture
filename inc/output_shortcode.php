@@ -92,14 +92,14 @@ function ipic_func( $atts ) {
 			{
 				$result_link = $wpdb->get_var("SELECT link FROM $table_bilder WHERE id='$id'");
 			
-				$ausgabe = '<a href="'.$result_link.'" target="_blank">'.$bild.'</a>';			
+				$ausgabe = '<div class="instagram-picture-hover"><a href="'.$result_link.'" target="_blank">'.$bild.'</a></div>';			
 			}
 			if($link == "2")
 			{
 				$result_picture = $wpdb->get_var("SELECT standard_resolution FROM $table_bilder WHERE id='$id'");
 				$result_title = $wpdb->get_var("SELECT text FROM $table_bilder WHERE id='$id'");
 			
-				$ausgabe = '<a href="'.$result_picture.'" data-lightbox="lightbox_instagram_picture_shortcode" data-lightbox="roadtrip" title="'.$result_title.'">'.$bild.'</a>';
+				$ausgabe = '<div class="instagram-picture-hover"><a href="'.$result_picture.'" data-lightbox="lightbox_instagram_picture_shortcode" data-lightbox="roadtrip" title="'.$result_title.'">'.$bild.'</a></div>';
 			}
 		}
 		else 
@@ -204,7 +204,7 @@ function ipic_func( $atts ) {
 			<br />
 			<div class="row-instagram">
 				<div class="col-instagram-6">
-					<img src="'.$file.'like.png" title="Likes" alt="Likes" />
+					<img src="'.$file.'like.png" title="Likes" alt="Likes" style="box-shadow:none;" style="box-shadow:none;"/>
 				</div>
 				<div class="col-instagram-6">
 					<b>'.$bild_like.'</b>
@@ -213,7 +213,7 @@ function ipic_func( $atts ) {
 			<div class="instagram_clear"></div>
 			<div class="row-instagram">
 				<div class="col-instagram-6">
-					<img src="'.$file.'comment.png" title="Comments" alt="Comments" />
+					<img src="'.$file.'comment.png" title="Comments" alt="Comments" style="box-shadow:none;" />
 				</div>
 				<div class="col-instagram-6">
 					<b>'.$bild_comments.'</b>

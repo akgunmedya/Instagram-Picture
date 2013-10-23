@@ -159,15 +159,15 @@ function widget($instance, $instagram)
 		
 		if($result_link == "1")
 		{
-			$link_anfang = '<a href="'.$link.'" target="_blank">';
-			$link_ende = '</a>';
+			$link_anfang = '<div class="instagram-picture-hover"><a href="'.$link.'" target="_blank">';
+			$link_ende = '</a></div>';
 		}
 		
 		if($result_link == "2")
 		{
 			$widget_id = str_replace("instagram_picture-", "", $widget_id);
-			$link_anfang = '<a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
-			$link_ende = '</a>';
+			$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
+			$link_ende = '</a></div>';
 		}
 		
 		if($result_bild_title == "1")
@@ -186,7 +186,7 @@ function widget($instance, $instagram)
    	$i++;
    }
 	  echo "<!-- Instagram Picture -->\n";
-	  echo "<!-- http://wordpress.org/plugins/instagram-picture/ -->\n";   
+	  echo "<!-- http://wordpress.org/plugins/instagram-picture/ -->\n"; 
    
      echo $ausgabe;
      

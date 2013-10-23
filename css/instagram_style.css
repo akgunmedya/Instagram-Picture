@@ -24,6 +24,9 @@
 .col-instagram-11{width:91.66666666666666%;float: left;text-align: center;}
 .col-instagram-12{width:100%;float: left;text-align: center;}
 
+.instagram-picture-hover img{opacity1;transition: opacity .5s ease-out;-moz-transition: opacity .5s ease-out;-webkit-transition: opacity .5s ease-out;-o-transition: opacity .5s ease-out;}
+.instagram-picture-hover img:hover{opacity: .5;}
+
 
 
 .col-instagram-offset-1{margin-left:8.333333333333332%;}

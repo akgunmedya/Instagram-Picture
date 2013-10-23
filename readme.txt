@@ -34,6 +34,9 @@ A lot of time, which is not paid.
 
 With a small [donation](http://tb-webtec.de/instagram_picture/donate.php) to help us continue that project Instagram Picture
 
+= GitHub =
+the plugin is in a repositories. [GitHub Instagram-Picture](http://github.com/TB-WebTec/Instagram-Picture)
+
 
 == Installation ==
 
@@ -83,15 +86,16 @@ No. This plugin only saves the path to the picture in the database. The image it
 
 == Upgrade Notice ==
 = Version 2.0 =
-* New Module: Widget (User-Infos);
-* New Module: Lightbox;
-* New Module: Remove images (public or not public);
-* Improvement: Code revision;
-* Improvement: 15 new Styles (Widget);
-* Improvement: Admin-Page Style;
-* Improvement: Check whether there are enough pictures;
-* Bugfix: Formular submit;
-* Bugfix: cURL connection;
+New Module: Widget (User-Infos);
+New Module: Lightbox;
+New Module: Remove images (public or not public);
+Improvement: Code revision;
+Improvement: 15 new Styles (Widget);
+Improvement: Hover effect;
+Improvement: Admin-Page Style;
+Improvement: Check whether there are enough pictures;
+Bugfix: Formular submit;
+Bugfix: cURL connection;
 
 == Changelog ==
 
@@ -101,6 +105,7 @@ No. This plugin only saves the path to the picture in the database. The image it
 * New Module: Remove images (public or not public)
 * Improvement: Code revision
 * Improvement: 15 new Styles (Widget)
+* Improvement: Hover effect
 * Improvement: Admin-Page Style
 * Improvement: Check whether there are enough pictures
 * Bugfix: Formular submit

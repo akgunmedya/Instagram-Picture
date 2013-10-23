@@ -136,15 +136,15 @@ function widget($instance, $instagram)
 		 
 		 		if($result_link == "1")
 				{
-					$link_anfang = '<a href="'.$link.'" target="_blank">';
-					$link_ende = '</a>';
+					$link_anfang = '<div class="instagram-picture-hover"><a href="'.$link.'" target="_blank">';
+					$link_ende = '</a></div>';
 				}
 		
 				if($result_link == "2")
 				{
 					$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
-					$link_anfang = '<a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
-					$link_ende = '</a>';
+					$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" data-lightbox="lightbox_instagram_picture_'.$widget_id.'" data-lightbox="roadtrip" title="'.$title.'">';
+					$link_ende = '</a></div>';
 				}
 			
 			$bild = $link_anfang.'<img src="'.$url.'" />'.$link_ende;
@@ -251,7 +251,7 @@ function widget($instance, $instagram)
 			<br />
 			<div class="row-instagram">
 				<div class="col-instagram-6">
-					<img src="'.$file.'like.png" title="Likes" alt="Likes" />
+					<img src="'.$file.'like.png" title="Likes" alt="Likes" style="box-shadow:none;" />
 				</div>
 				<div class="col-instagram-6">
 					<b>'.$bild_like.'</b>
@@ -260,7 +260,7 @@ function widget($instance, $instagram)
 			<div class="instagram_clear"></div>
 			<div class="row-instagram">
 				<div class="col-instagram-6">
-					<img src="'.$file.'comment.png" title="Comments" alt="Comments" />
+					<img src="'.$file.'comment.png" title="Comments" alt="Comments" style="box-shadow:none;" />
 				</div>
 				<div class="col-instagram-6">
 					<b>'.$bild_comments.'</b>
