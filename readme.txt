@@ -77,25 +77,40 @@ No. This plugin only saves the path to the picture in the database. The image it
 == Screenshots ==
 
 1. PHP-Code
-2. PHP-Code
-3. Widget-Sidebar
-4. Widget-Sidebar
+2. Lightbox
+3. PHP-Code
+4. Widget Instagram Picture
 5. Shortcode
-6. Shortcode
-6. Widget User-Info
+6. Widget Instagram Picture individually
+7. Widget Instagram Picture with User Info
+8. Site Instagram
+9. Site All Pictures
+10. Form PHP-Code
+11. Form PHP-Code Styles
+12. Form Widget Sytles
+13. Website Screen
+14. Shortcode
+15. Configuration
+16. Update photos
+17. All Widgets
+18. Widget Instagram Picture
+19. Widget Instagram Picture individually
+20. Widget Instagram Picture with Infos
+21. Widget Instagram Picture User Infos
 
 == Upgrade Notice ==
 = Version 2.0 =
 New Module: Widget (User-Infos);
 New Module: Lightbox;
 New Module: Remove images (public or not public);
+New Module: Hover effect;
 Improvement: Code revision;
 Improvement: 15 new Styles (Widget);
-Improvement: Hover effect;
 Improvement: Admin-Page Style;
 Improvement: Check whether there are enough pictures;
 Bugfix: Formular submit;
 Bugfix: cURL connection;
+Bugfix: Special character issue in title;
 
 == Changelog ==
 
@@ -103,13 +118,14 @@ Bugfix: cURL connection;
 * New Module: Widget (User-Infos)
 * New Module: Lightbox
 * New Module: Remove images (public or not public)
+* New Module: Hover effect
 * Improvement: Code revision
 * Improvement: 15 new Styles (Widget)
-* Improvement: Hover effect
 * Improvement: Admin-Page Style
 * Improvement: Check whether there are enough pictures
 * Bugfix: Formular submit
 * Bugfix: cURL connection
+* Bugfix: Special character issue in title
 
 = Version 1.3.4 (October 13, 2013) =
 * Bugfix: cURL SSL connection problem

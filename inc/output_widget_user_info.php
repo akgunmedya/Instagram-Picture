@@ -74,6 +74,7 @@ function update($newinstance,$oldinstance)
     $instance['update'] =  $newinstance['update'];
     $instance['picture'] =  $newinstance['picture'];
     $instance['link'] =  $newinstance['link'];
+    $instance['title'] =  $newinstance['title'];
 
     return $instance;
     return $instagram;
@@ -86,6 +87,7 @@ function widget($instance, $instagram)
 	  global $wpdb;
      $table_name = $wpdb->prefix . "instagram_bilder";	
 
+	  $title = $instagram["title"];
      $result_update =  $instagram['update'];
      $result_picture =  $instagram['picture'];
      $result_link =  $instagram['link'];
