@@ -89,6 +89,8 @@ function instagram_picture_php_code() {
 			if($result_link == "2"){ $result_link_output="Original Page with hover-effect";}
 			if($result_link == "3"){ $result_link_output="Direct link";}
 			if($result_link == "4"){ $result_link_output="Direct link with hover-effect";}
+			if($result_link == "5"){ $result_link_output="Custom link";}
+			if($result_link == "6"){ $result_link_output="Custom link with hover-effect";}
 	
 			// form settins
 			echo '
@@ -103,6 +105,8 @@ function instagram_picture_php_code() {
       					if($result_link != "2"){echo '<option value="3">Original Page with hover-effect</option>';}
       					if($result_link != "3"){echo '<option value="2">Direct link</option>';}
       					if($result_link != "4"){echo '<option value="4">Direct link with hover-effect</option>';}
+      					if($result_link != "5"){echo '<option value="5">Custom link</option>';}
+      					if($result_link != "6"){echo '<option value="6">Custom link with hover-effect</option>';}
       	echo '
     					</select>
 

@@ -3,9 +3,9 @@ Contributors: Tobias Bohn
 Donate link: http://tb-webtec.de/instagram_picture/donate.php
 Tags: instagram, header, responsiv, widget, picture, image, sidebar, gallery, embed, embedded, Foto, Bilder, Shortcode
 Requires at least: 3.6
-Version: 2.0.2
+Version: 2.1
+Stable tag: 2.1
 Tested up to: 3.6
-Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,12 @@ Delete Module: Lightbox;
 New funktion: Direkt link;
 
 == Changelog ==
+
+= Version 2.1 (October 27, 2013) =
+* New Module: Custom link
+* New Module: Style edit
+* New Module: Contact
+* Improvement: All Pictures form
 
 = Version 2.0.2 (October 27, 2013) =
 * Delete Module: Lightbox

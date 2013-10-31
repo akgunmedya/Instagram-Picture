@@ -19,57 +19,107 @@ function instagram_picture_alle_bilder() {
 		// Check whether any pictures exist	
 		if($num_bilder != "0")
 		{	
-			echo '<div class="instagram-picture-box"><h2>All Pictures</h2>';
+		
+			$picid_get = $_GET["picid_get"];
 			
-			// Changes whether public or not
-			if(isset($_POST['picid']))
+			// Update the datas
+			if(isset($_POST['status']) OR isset($_POST["custom_link"]))
 			{
-				$picid 				= $_POST['picid'];
-				$picid_status		= $_POST['picid_status'];
+				$picid_custom		= $_POST['custom_link'];
+				$picid_status		= $_POST['status'];
 		
-				$wpdb->query("UPDATE $instagram_picture_variable[101] Set status = '$picid_status' WHERE id = '$picid'");
-			}
-	
-			$i=1;		
-			// Spend existing images
-			foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[101] ORDER BY id DESC") as $key => $row) 
+				$wpdb->query("UPDATE $instagram_picture_variable[101] Set status = '$picid_status', custom_link='$picid_custom' WHERE id = '$picid_get'");
+				
+				unset($picid_get);
+				unset($_POST['custom_link']);
+				unset($_POST['status']);
+				
+				echo '<div class="instagram-picture-success instagram-admin-fadein">Logged</div>';
+			}			
+			
+			// Singel image
+			if(!empty($picid_get))
 			{
-				$url 			= $row->thumbnail;
-				$title 		= $row->text;  
-				$id 			= $row->id;  				
-				$status 		= $row->status;
-		
-				$class = ($i % 2) ? "FFFFFF" : "E0E0E0";
-		
-				// output
+				foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[101] WHERE id = '$picid_get'") as $key => $row) 
+				{
+					$url 				= $row->thumbnail;
+					$title 			= $row->text;  
+					$id 				= $row->id;  				
+					$status 			= $row->status;
+					$custom_link 	= $row->custom_link;
+				}
+
+				echo '<div class="instagram-picture-box">';		
+				
 				echo '
-				<table style="float:left;border: 1px solid; margin:5px;background-color:#'.$class.';">
-					<tr>
-						<td><img src="'.$url.'" title="'.$title.'" width="80px" /></td>
-						<td>'.$id.'<br />
-						<form action="" id="instagram" method="post">
-							<input type="hidden" name="picid" value="'.$id.'">';
-						if($status == "0")
-						{
-							echo '
-							<input type="hidden" name="picid_status" value="1">
-							<input type="submit" class="instagram-picture-success-button" value="public">
-							';	
-						}
-						if($status == "1")
-						{
-							echo '
-							<input type="hidden" name="picid_status" value="0">
-							<input type="submit" class="instagram-picture-danger-button" value="not public">
-							';	
-						}
-						echo '</form>
-						</td>
-					</tr>
-				</table>';
-		
-				$i++;
+				<div class="row-instagram-admin instagram-admin-fadein">
+					<div class="col-instagram-1_admin">
+						<img src="'.$url.'" title="'.$title.'" width="100%" />
+					</div>
+					<div class="row-instagram-admin">
+						<div class="col-instagram-5_admin col-instagram-offset-1_admin">
+							<b>'.$id.'</b>
+						</div>
+					</div>
+					<div class="row-instagram-admin">
+						<div class="col-instagram-5_admin col-instagram-offset-1_admin" style="';if(isset($_POST['status']) OR isset($_POST["custom_link"])){echo 'background-color:#3d8b3d;';} echo 'padding:5px 10px 5px 10px;">
+							<form action="" id="instagram" method="post">
+								<input type="text" name="custom_link" value="'.$custom_link.'" placeholder="Custom link" style="width:100%;" />
+									<div class="row-instagram-admin">
+										<div class="col-instagram-2_admin" style="text-align:center;">
+											<input type="radio" name="status" value="0"';if($status == "0"){echo ' checked="checked"';} echo '>
+										</div>
+										<div class="col-instagram-2_admin" style="text-align:center;">
+											<input type="radio" name="status" value="1"';if($status == "1"){echo ' checked="checked"';} echo '>
+										</div>
+									</div>
+									<div class="instagram_clear_admin"></div>
+									<div class="row-instagram-admin">
+										<div class="col-instagram-2_admin" style="text-align:center;">
+											Public
+										</div>
+										<div class="col-instagram-2_admin" style="text-align:center;">
+											not Public
+										</div>
+									</div>
+									<div class="instagram_clear_admin"></div>
+								<button type="submit" class="instagram-picture-success-button">Save</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="instagram_clear_admin"></div>
+				';				
+				
+				echo '</div>';
 			}
+			
+				echo '<div class="instagram-picture-box"><h2>All Pictures</h2>';
+	
+				$i=1;		
+				// Spend existing images
+				foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[101] ORDER BY id DESC") as $key => $row) 
+				{
+					$url 			= $row->thumbnail;
+					$title 		= $row->text;  
+					$id 			= $row->id;  				
+					$status 		= $row->status;
+		
+					$class = ($i % 2) ? "FFFFFF" : "E0E0E0";
+		
+					// output
+					echo '
+					<table style="float:left;border: 1px solid; margin:5px;background-color:#'.$class.';">
+						<tr>
+							<td><img src="'.$url.'" title="'.$title.'" width="80px" /></td>
+							<td style="text-align:center;">'.$id.'<br />
+								<a href="?page=instagram_picture_alle_bilder&picid_get='.$id.'" class="instagram-picture-info-button">edit</a>
+							</td>
+						</tr>
+					</table>';
+		
+					$i++;
+				}
 	
 			// clear
 			echo '

@@ -40,9 +40,9 @@ function instagram_header() {
    		$low_resolution			= $row->low_resolution;
    		$standard_resolution 	= $row->standard_resolution;
 			$title 						= $row->text;
-			$link 						= $row->link;   
-			
-			$title = utf8_decode($title); 				
+			$link 						= $row->link; 
+			$custom_link				= $row->custom_link;  
+		
     	
 			if($i < "10")
 			{
@@ -74,6 +74,16 @@ function instagram_header() {
 			if($result_link == "4")
 			{
 					$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" title="'.$title.'">';
+					$link_ende = '</a></div>';
+			}
+			if($result_link == "5")
+			{
+					$link_anfang = '<a href="'.$custom_link.'" title="'.$title.'">';
+					$link_ende = '</a>';
+			}
+			if($result_link == "6")
+			{
+					$link_anfang = '<div class="instagram-picture-hover"><a href="'.$custom_link.'" title="'.$title.'">';
 					$link_ende = '</a></div>';
 			}
 			

@@ -1,7 +1,7 @@
 <?php
 function instagram_picture_instagram() 
 {
-	
+
 	########################################################################################################################
 	/* 
 	*	variable definition
@@ -91,11 +91,8 @@ function instagram_picture_instagram()
 					</div>
 					
 					<div class="col-instagram-3_admin instagram-picture-box-in col-instagram-offset-1_admin">
-						<h4>Support & Suggestions</h4>
-							<p>Need help or have a desire improvement? Then you can via Facebook, Twitter or <a href="http://tb-webtec.de/instagram_picture/contact.php" target="_blank"> e-mail reply</a> (support@tb-webtec.de). 
-								Or on <a href="http://wordpress.org/plugins/instagram-picture/">http://wordpress.org/plugins/instagram-picture/</a>.</p>
-						<h4>Credentials</h4>
-							<p>We are looking for our Facebook page and website references. Want to be listed here also, please send us an email to: <br />support@tb-webtec.de</p>
+						<h4>Support & Feedback</h4>
+							<p>More information: <a href="?page=instagram_picture_contact">here</a> </p>
 					</div>
 					
 				<div class="instagram_clear_admin"></div>

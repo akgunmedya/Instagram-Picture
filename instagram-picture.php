@@ -3,7 +3,7 @@
 Plugin Name: Instagram Picture
 Plugin URI: http://tb-webtec.de/instagram_picture/
 Description: Your Instagram photos as a PHP-Code, Widget or Shortcode
-Version: 2.0.2
+Version: 2.1
 Author: Tobias Bohn
 Author URI: https://twitter.com/tobias_bohn
 Requires at least: 3.0
@@ -24,7 +24,7 @@ License: GPLv2 or later
 	global $wpdb;
 
 	// infos
-	$instagram_picture_variable["0"]  = "2.0.2"; 																// version
+	$instagram_picture_variable["0"]  = "2.1"; 																// version
 	$instagram_picture_variable["5"]  = "25"; 																// optimized header angular (end of style-id)
 	$instagram_picture_variable["6"]  = "122";																// optimized header angular (round) (end of style-id)
 	$instagram_picture_variable["7"]  = "226";																// optimized widget angular (end of style-id)
@@ -98,11 +98,40 @@ License: GPLv2 or later
   				standard_resolution text NOT NULL, 
   				pic_like int(11) NOT NULL, 
   				pic_comment int(11) NOT NULL, 
+  				custom_link char(255) NOT NULL,
   				UNIQUE KEY id (id)
 				);";
 
 				require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 				dbDelta( $sql );
+	}
+	// Tabelle update onto 2.1
+	if($used_version < $file_version)
+	{
+			// table name instagram-bilder
+			$table_name = $wpdb->prefix . "instagram_bilder";
+   
+   			// status add!
+   			$sql = "CREATE TABLE $table_name (
+  				id bigint NOT NULL,
+  				status int(1) NOT NULL,
+  				link text NOT NULL,
+  				text text NOT NULL,
+  				thumbnail text NOT NULL, 
+  				low_resolution text NOT NULL, 
+  				standard_resolution text NOT NULL, 
+  				pic_like int(11) NOT NULL, 
+  				pic_comment int(11) NOT NULL, 
+  				custom_link char(255) NOT NULL,
+  				UNIQUE KEY id (id)
+				);";
+
+				require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+				dbDelta( $sql );
+				
+		$table_name = $wpdb->prefix . "instagram_info";		
+		
+		$wpdb->query("UPDATE $table_name Set text = '$file_version' WHERE id = '7'");
 	}
 
 ########################################################################################################################
@@ -142,7 +171,7 @@ License: GPLv2 or later
 		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('4', '0')"); // linkable or lightbox (for PHP-Code)
 		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('5', '0')"); // Image with title (for PHP-Code)
 		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('6', '0')"); // Border-Radius (for PHP-Code)
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '2.0')"); // Version
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '2.1')"); // Version
 	
 		// table name
 		$table_name = $wpdb->prefix . "instagram_bilder";
@@ -158,6 +187,7 @@ License: GPLv2 or later
   			standard_resolution text NOT NULL, 
   			pic_like int(11) NOT NULL, 
   			pic_comment int(11) NOT NULL, 
+  			custom_link char(255) NOT NULL,
   			UNIQUE KEY id (id)
 		);";
 
@@ -286,6 +316,10 @@ add_action('admin_menu', 'instagram_picture_menu');
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/widget.php");								//	Site -> Widget
 
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/shortcode.php");							//	Site -> Shortcode
+	
+	require_once(INSTAGRAM_PICTURE_DIR . "/inc/css.php");									//	Site -> CSS
+	
+	require_once(INSTAGRAM_PICTURE_DIR . "/inc/contact.php");								//	Site -> Contact
 
 
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/output_php_code.php");					//	Output of the PHP code

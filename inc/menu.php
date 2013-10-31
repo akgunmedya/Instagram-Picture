@@ -10,6 +10,8 @@ function instagram_picture_menu()
   add_submenu_page(__FILE__, 'PHP Code', 'PHP Code', 'manage_options', 'instagram_picture_php_code', 'instagram_picture_php_code');
   add_submenu_page(__FILE__, 'Widget', 'Widget', 'manage_options', 'instagram_picture_widget', 'instagram_picture_widget');
   add_submenu_page(__FILE__, 'Shortcode', 'Shortcode', 'manage_options', 'instagram_picture_shortcode_doku', 'instagram_picture_shortcode_doku');
+  add_submenu_page(__FILE__, 'CSS', 'CSS', 'manage_options', 'instagram_picture_css', 'instagram_picture_css');
+  add_submenu_page(__FILE__, 'Contact', 'Contact', 'manage_options', 'instagram_picture_contact', 'instagram_picture_contact');
   
 }
 

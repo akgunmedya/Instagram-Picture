@@ -47,6 +47,8 @@ function form($config)
 			if($config['link'] == "2"){ $result_link_output="Original Page with hover-effect";}
 			if($config['link'] == "3"){ $result_link_output="Direct link";}
 			if($config['link'] == "4"){ $result_link_output="Direct link with hover-effect";}
+			if($config['link'] == "5"){ $result_link_output="Custom link";}
+			if($config['link'] == "6"){ $result_link_output="Custom link with hover-effect";}
     ?>
     <label for="<?php echo $this->get_field_id("link");?>">
     <p>Picture linkable:<br>
@@ -56,7 +58,9 @@ function form($config)
       					if($config['link'] != "1"){echo '<option value="1">Original Page</option>';}
       					if($config['link'] != "2"){echo '<option value="2">Original Page with hover-effect</option>';}
       					if($config['link'] != "3"){echo '<option value="3">Direct link</option>';}
-      					if($config['link'] != "4"){echo '<option value="4">Direct link with hover-effect</option>';} 
+      					if($config['link'] != "4"){echo '<option value="4">Direct link with hover-effect</option>';}
+      					if($config['link'] != "5"){echo '<option value="5">Custom link</option>';}
+      					if($config['link'] != "6"){echo '<option value="6">Custom link with hover-effect</option>';} 
      						?>
     					</select>
     </p>
@@ -64,7 +68,7 @@ function form($config)
     
     <label for="<?php echo $this->get_field_id("update");?>">
     <p>Update:<br>
-    	<input type="radio" name="<?php echo  $this->get_field_name("update"); ?>" value="0" <?php if($config['update'] == "0") {echo " checked='checked'";} ?>> DB
+    	<input type="radio" name="<?php echo  $this->get_field_name("update"); ?>" value="0" <?php if($config['update'] == "0" OR empty($config['update'])) {echo " checked='checked'";} ?>> DB
 		<input type="radio" name="<?php echo  $this->get_field_name("update"); ?>" value="1" <?php if($config['update'] == "1") {echo " checked='checked'";} ?>> Live
     </p>
     </label>
@@ -133,12 +137,12 @@ function widget($instance, $instagram)
 
      foreach( $wpdb->get_results("SELECT * FROM $table_name WHERE id='$id'") as $key => $row) 
      {
-     	 $url = $row->low_resolution;
-     	 $standard_resolution = $row->standard_resolution;
-		 $title = $row->text;
-		 $link = $row->link;
-		 
-		 $title = utf8_decode($title); 	
+     	 $url 							= $row->low_resolution;
+     	 $standard_resolution 	= $row->standard_resolution;
+		 $title 							= $row->text;
+		 $link 							= $row->link;
+		 $custom_link					= $row->custom_link;
+ 	
 		 
 			if($result_link == "1")
 			{
@@ -150,7 +154,6 @@ function widget($instance, $instagram)
 				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$link.'" target="_blank">';
 				$link_ende = '</a></div>';
 			}
-		
 			if($result_link == "3")
 			{
 				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
@@ -161,6 +164,18 @@ function widget($instance, $instagram)
 			{
 				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
 				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$standard_resolution.'" title="'.$title.'">';
+				$link_ende = '</a></div>';
+			}
+			if($result_link == "5")
+			{
+				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
+				$link_anfang = '<a href="'.$custom_link.'" title="'.$title.'">';
+				$link_ende = '</a>';
+			}
+			if($result_link == "6")
+			{
+				$widget_id = str_replace("instagram_picture_individually-", "", $widget_id);
+				$link_anfang = '<div class="instagram-picture-hover"><a href="'.$custom_link.'" title="'.$title.'">';
 				$link_ende = '</a></div>';
 			}
 			
