@@ -29,7 +29,7 @@ function instagram_picture_konfiguration()
 						<div class="row-instagram_admin">
 							<div class="col-instagram-5_admin instagram-picture-box-in">
 								<h2>Connect Instagram account</h2>
-									<a href="http://tb-webtec.de/instagram_picture/login.php" target="_blank">Here you will find the information.</a>	
+									<a href="http://ipic.tb-webtec.de/login.php" target="_blank">Here you will find the information.</a>	
 										<form action="" id="instagram" method="post">
 											<ul>
 												<li>

@@ -1,5 +1,5 @@
 <?php
-function instagram_picture_aktualisieren() 
+function ipic_cron() 
 {
 	
 	########################################################################################################################
@@ -18,68 +18,10 @@ function instagram_picture_aktualisieren()
 		// get access
 		$instagram_user_id = $wpdb->get_var("SELECT text FROM $instagram_picture_variable[100] WHERE id='1'");
    	$instagram_access = $wpdb->get_var("SELECT text FROM $instagram_picture_variable[100] WHERE id='2'");
-   	
-   	/*
-   	*	Cron
-   	*/
-   		// Cron form
-			if(isset($_POST['cron']))
-			{
-				$cron = $_POST['cron'];
-				
-				$wpdb->query("UPDATE $instagram_picture_variable[100] Set text = '$cron' WHERE id = '8'");
-			}   		
-   		
-   		// Cron query
-   		$cron = $wpdb->get_var("SELECT text FROM $instagram_picture_variable[100] WHERE id='8'");
-   		
-   		if($cron == "0"){ $cron_output="off";}
-   		if($cron == "1"){ $cron_output="on";}
 	
 		// If the data is present
 		if(!empty($instagram_user_id) AND !empty($instagram_access))
 		{
-		
-			// Output if $go not isset
-			if (!isset ($_GET["code"]))
-			{
-				echo '
-					<div class="instagram-picture-box">
-						<h2>Update Instagram photos</h2>
-						<a href="?page=instagram_picture_aktualisieren&code=go" class="instagram-picture-info-button">Update images</a>
-						<p>This procedure needs eventually more times.</p>
-					</div>';
-					
-				echo '
-					<div class="instagram-picture-box">
-						<h2>Cron job</h2>
-							<form action="" id="instagram" method="post">
-								<select name="cron" size="1">
-									<option value="'.$cron.'">'.$cron_output.'</option>';
-    				  				if($cron != "0"){echo '<option value="0">off</option>';}
-    				  				if($cron != "1"){echo '<option value="1">on</option>';}
-      	echo '
-    							</select>
-							<button type="submit" class="instagram-picture-success-button">Save</button>
-						   </form>
-						   <div class="instagram-picture-alert">
-						   	<p><b>Caution</b><br />We do not recommend this option. We have installed it only on explicit desire.<br />
-						   	The problem is did an update to a visitor is passed. (Once every hour). And this can take some time depending on the amount of data.</p>
-						   	<p>We prefer to recommend the file GitHub (see below) to use with a cron job.</p>
-						   </div>
-					</div>';
-					
-				echo '
-					<div class="instagram-picture-box">
-						<h2>Automatic update</h2>
-						<p>On GitHub-Site, we have created a file, that even updates the images with a few adjustments.</p>
-						<p>GitHub-Site: <a href="http://github.com/TB-WebTec/Instagram-Picture-auto-update">http://github.com/TB-WebTec/Instagram-Picture-auto-update</a></p>
-					</div>';
-			}
-			
-			// Output if $go not isset
-			else 
-			{
 				
 			########################################################################################################################
 			/*
@@ -316,32 +258,36 @@ function instagram_picture_aktualisieren()
 		
 					// end of $code 200 (first connection)
 					}
-					// When the first request was not successful
-    				else 
-    				{ 
-    					echo '<div class="instagram-picture-alert"><p>Problem of Authentication.</p></div>';
-    				}
-				
-				// end of data are available
-				}
-				// A connection could not be established.
-				else 
-				{ 
-					echo '<div class="instagram-picture-alert"><p>Sorry, connection was not possible, try connection later again. <b>Curl</b> is enabled on your server?</p></div>'; 
-				}
-	
-			// end of $code go
-			}
-			
-		// end when data are avaible
-		}
-		else 
-		{ 
-			echo '<div class="instagram-picture-alert"><p>No profil information was given. Please go back to "<a href="?page=instagram_picture_konfiguration">Configuration</a>".</p></div>'; 
-		}
 	
 	########################################################################################################################
 		
 // end of function
-}
+
+			}		
+		}
+	}
+
+	########################################################################################################################
+	/* 
+	*	variable definition
+   */
+	global $instagram_picture_variable;
+	global $wpdb;
+	########################################################################################################################
+	
+	$cron = $wpdb->get_var("SELECT text FROM $instagram_picture_variable[100] WHERE id='8'");
+
+	if($cron == "1")
+	{
+		// Cronjob
+		if ( !wp_next_scheduled('ipic_cron_update') ) {
+			wp_schedule_event( time(), 'hourly', 'ipic_cron_update' );
+		}
+
+		add_action( 'ipic_cron_update', 'ipic_cron' );
+	}
+	if($cron == "0")
+	{
+		wp_clear_scheduled_hook( 'ipic_cron_update' );
+	}
 ?>

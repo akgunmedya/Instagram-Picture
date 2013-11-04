@@ -62,7 +62,8 @@ License: GPLv2 or later
 			// database instagram_info
 			$table_name = $wpdb->prefix . "instagram_info";
 				// Version in database record
-				$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '$file_version')"); // Version
+				$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '$file_version')"); 	// Version
+				$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', 'off')"); 					 	// Cron Update
 				
 			// databse instagram_user_info
 			$table_name = $wpdb->prefix . "instagram_user_info";
@@ -131,7 +132,9 @@ License: GPLv2 or later
 				
 		$table_name = $wpdb->prefix . "instagram_info";		
 		
-		$wpdb->query("UPDATE $table_name Set text = '$file_version' WHERE id = '7'");
+		$wpdb->query("UPDATE $table_name Set text = '$file_version' WHERE id = '7'");			// Version
+		
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', 'off')"); 					 	// Cron Update
 	}
 
 ########################################################################################################################
@@ -165,13 +168,14 @@ License: GPLv2 or later
 		dbDelta( $sql );
 	
 		// predefined entries
-		$wpdb->query("INSERT INTO $table_name (id) VALUES ('1')"); // Instagram-ID
-		$wpdb->query("INSERT INTO $table_name (id) VALUES ('2')");	 // Access-Token
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('3', '01')"); // Style (for PHP-Code)
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('4', '0')"); // linkable or lightbox (for PHP-Code)
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('5', '0')"); // Image with title (for PHP-Code)
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('6', '0')"); // Border-Radius (for PHP-Code)
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '2.1')"); // Version
+		$wpdb->query("INSERT INTO $table_name (id) VALUES ('1')"); 					// Instagram-ID
+		$wpdb->query("INSERT INTO $table_name (id) VALUES ('2')");	 					// Access-Token
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('3', '01')"); 	// Style (for PHP-Code)
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('4', '0')"); 		// linkable or lightbox (for PHP-Code)
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('5', '0')"); 		// Image with title (for PHP-Code)
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('6', '0')"); 		// Border-Radius (for PHP-Code)
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '2.1')"); 	// Version
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', 'off')"); 		// Cron
 	
 		// table name
 		$table_name = $wpdb->prefix . "instagram_bilder";
@@ -292,6 +296,25 @@ add_action('admin_menu', 'instagram_picture_menu');
 
 
 
+
+########################################################################################################################
+/*
+*	Cronjob
+*/
+/*register_activation_hook( __FILE__, 'prefix_activation_instagram_picture' );
+function prefix_activation_instagram_picture() {
+	wp_schedule_event( current_time ( 'timestamp' ), 'hourly', 'prefix_event_hook_instagram_picture' );
+}
+
+add_action( 'prefix_event_hook_instagram_picture', 'instagram_picture_aktualisieren' );*/
+
+
+
+########################################################################################################################
+
+
+
+
 ########################################################################################################################
 /*
 *	Involvement of other files
@@ -321,9 +344,10 @@ add_action('admin_menu', 'instagram_picture_menu');
 	
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/contact.php");								//	Site -> Contact
 
-
+	// PHP-Code
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/output_php_code.php");					//	Output of the PHP code
 
+	// Shortcode
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/output_shortcode.php");					//	Output of the Shortcode
 	
 	// Widget
@@ -334,6 +358,11 @@ add_action('admin_menu', 'instagram_picture_menu');
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/output_widget_info.php");				//	Widget: Instagram Picture with Infos
 	
 	require_once(INSTAGRAM_PICTURE_DIR . "/inc/output_widget_user_info.php");			//	Widget: Instagram Picture User Infos
+	
+	// Cronupdate
+	require_once(INSTAGRAM_PICTURE_DIR . "/inc/cron_update.php");							//	Cronupdate
+	
+	
 ########################################################################################################################
 
 ?>

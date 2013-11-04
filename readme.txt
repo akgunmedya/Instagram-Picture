@@ -1,11 +1,11 @@
 === Instagram Picture ===
 Contributors: Tobias Bohn
-Donate link: http://tb-webtec.de/instagram_picture/donate.php
+Donate link: http://ipic.tb-webtec.de/donate.php
 Tags: instagram, header, responsiv, widget, picture, image, sidebar, gallery, embed, embedded, Foto, Bilder, Shortcode
-Requires at least: 3.6
 Version: 2.1
 Stable tag: 2.1
-Tested up to: 3.6
+Tested up to: 3.0
+Requires at least: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ Your Instagram photos for your blog
 
 = Features =
 
-Your [Instagram photos](http://tb-webtec.de/instagram_picture/) as Widget, Shortcode or PHP-Code:
+Your [Instagram photos](http://ipic.tb-webtec.de/) as Widget, Shortcode or PHP-Code:
 
 * **Widget**
 
@@ -33,7 +33,7 @@ Your [Instagram photos](http://tb-webtec.de/instagram_picture/) as Widget, Short
 The development and also consume a lot of support time.
 A lot of time, which is not paid.
 
-With a small [donation](http://tb-webtec.de/instagram_picture/donate.php) to help us continue that project Instagram Picture
+With a small [donation](http://ipic.tb-webtec.de/donate.php) to help us continue that project Instagram Picture
 
 = GitHub =
 the plugin is in a repositories. [GitHub Instagram-Picture](http://github.com/TB-WebTec/Instagram-Picture)
@@ -63,7 +63,7 @@ A good tutorial can be found here: [inmotionhosting.com](http://www.inmotionhost
 = Instagram Authentication =
 
 * **Connect your Instagram-Account with Wordpress**
-That the plugin also shows your Instagram Pictures, please go to: http://tb-webtec.de/instagram_picture/login.php.
+That the plugin also shows your Instagram Pictures, please go to: http://ipic.tb-webtec.de/login.php.
 Please click "Instagram Authentication".
 Now authenticate the APP with your Account.
 You will be redirected automatically (to a page) where your Instagram-ID and Access-Token is.
@@ -78,36 +78,25 @@ No. This plugin only saves the path to the picture in the database. The image it
 == Screenshots ==
 
 1. PHP-Code
-2. Lightbox
-3. PHP-Code
-4. Widget Instagram Picture
-5. Shortcode
-6. Widget Instagram Picture individually
-7. Widget Instagram Picture with User Info
-8. Site Instagram
-9. Site All Pictures
-10. Form PHP-Code
-11. Form PHP-Code Styles
-12. Form Widget Sytles
-13. Website Screen
-14. Shortcode
-15. Configuration
-16. Update photos
-17. All Widgets
-18. Widget Instagram Picture
-19. Widget Instagram Picture individually
-20. Widget Instagram Picture with Infos
-21. Widget Instagram Picture User Infos
+2. PHP-Code
+3. Widget Instagram Picture
+4. Shortcode
+5. Widget Instagram Picture individually
+6. Widget Instagram Picture with User Info
 
 == Upgrade Notice ==
-Delete Module: Lightbox;
-New funktion: Direkt link;
+New Module: Custom link; 
+New Module: Style edit (CSS); 
+New Module: Crontab; 
+New Module: Contact; 
+Improvement: All Pictures form; 
 
 == Changelog ==
 
 = Version 2.1 (October 27, 2013) =
 * New Module: Custom link
-* New Module: Style edit
+* New Module: Style edit (CSS)
+* New Module: Crontab
 * New Module: Contact
 * Improvement: All Pictures form
 

@@ -102,8 +102,8 @@ function instagram_picture_php_code() {
 							<option value="'.$result_link.'">'.$result_link_output.'</option>';
     				  		if($result_link != "0"){echo '<option value="0">Do Nothing</option>';}
       					if($result_link != "1"){echo '<option value="1">Original Page</option>';}
-      					if($result_link != "2"){echo '<option value="3">Original Page with hover-effect</option>';}
-      					if($result_link != "3"){echo '<option value="2">Direct link</option>';}
+      					if($result_link != "2"){echo '<option value="2">Original Page with hover-effect</option>';}
+      					if($result_link != "3"){echo '<option value="3">Direct link</option>';}
       					if($result_link != "4"){echo '<option value="4">Direct link with hover-effect</option>';}
       					if($result_link != "5"){echo '<option value="5">Custom link</option>';}
       					if($result_link != "6"){echo '<option value="6">Custom link with hover-effect</option>';}
