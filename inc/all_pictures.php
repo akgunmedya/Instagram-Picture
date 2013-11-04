@@ -100,20 +100,40 @@ function instagram_picture_alle_bilder() {
 				// Spend existing images
 				foreach( $wpdb->get_results("SELECT * FROM $instagram_picture_variable[101] ORDER BY id DESC") as $key => $row) 
 				{
-					$url 			= $row->thumbnail;
-					$title 		= $row->text;  
-					$id 			= $row->id;  				
-					$status 		= $row->status;
+					$url 				= $row->thumbnail;
+					$title 			= $row->text;  
+					$id 				= $row->id;  				
+					$status 			= $row->status;
+					$custom_link 	= $row->custom_link;
 		
 					$class = ($i % 2) ? "FFFFFF" : "E0E0E0";
 		
 					// output
 					echo '
-					<table style="float:left;border: 1px solid; margin:5px;background-color:#'.$class.';">
+					<table style="float:left;border: 1px solid; margin:5px;background-color:#'.$class.';padding:5px;">
 						<tr>
 							<td><img src="'.$url.'" title="'.$title.'" width="80px" /></td>
-							<td style="text-align:center;">'.$id.'<br />
+							<td style="text-align:center;"><b>'.$id.'</b><br />
 								<a href="?page=instagram_picture_alle_bilder&picid_get='.$id.'" class="instagram-picture-info-button">edit</a>
+								<br />
+									<div style="margin:0 auto;">';
+									
+										$plugins_url = plugins_url('instagram-picture/img');
+										if(empty($custom_link))
+										{
+											echo '<img src="'.$plugins_url.'/yellow.png" alt="Not Custom link" title="Not Custom link"> ';
+										}
+										else {
+											echo '<img src="'.$plugins_url.'/green.png" alt="Custom link available" title="Custom link available"> ';
+										}
+										if($status == "0")
+										{
+											echo '<img src="'.$plugins_url.'/green.png" alt="Public" title="Public">';
+										}
+										else {
+											echo '<img src="'.$plugins_url.'/red.png" alt="Not Public" title="Not Public">';
+										}
+									echo '</div>
 							</td>
 						</tr>
 					</table>';
