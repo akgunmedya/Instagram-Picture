@@ -93,12 +93,13 @@ Improvement: All Pictures form;
 
 == Changelog ==
 
-= Version 2.1 (October 27, 2013) =
+= Version 2.1 (November xx, 2013) =
 * New Module: Custom link
 * New Module: Style edit (CSS)
 * New Module: Crontab
 * New Module: Contact
 * Improvement: All Pictures form
+* Bugfix: PHP-Code form (On Thumbnail Click)
 
 = Version 2.0.2 (October 27, 2013) =
 * Delete Module: Lightbox
