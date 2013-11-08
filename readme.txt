@@ -2,16 +2,19 @@
 Contributors: Tobias Bohn
 Donate link: http://ipic.tb-webtec.de/donate.php
 Tags: instagram, header, responsiv, widget, picture, image, sidebar, gallery, embed, embedded, Foto, Bilder, Shortcode
-Version: 2.1
 Stable tag: 2.1
-Tested up to: 3.0
+Tested up to: 3.6
 Requires at least: 3.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Your Instagram photos for your blog
 
 == Description ==
+
+*Yes, Instagram Picture is the name of the plugin and it does wonderful things for your Wordpress site when integrating your Instagram photos. This plugin is perfect for embedding your Instagram 
+photos into Wordpress within nearly any location that you see fit. Not only does Instagram Picture allow you to add images to various locations within your Wordpress site, but it also comes with 
+many options to place them such as shortcodes, widgets, and PHP*
+
+Jeff Matson from inmotionhosting.com
 
 = Features =
 
@@ -85,20 +88,17 @@ No. This plugin only saves the path to the picture in the database. The image it
 6. Widget Instagram Picture with User Info
 
 == Upgrade Notice ==
-New Module: Custom link; 
-New Module: Style edit (CSS); 
-New Module: Crontab; 
-New Module: Contact; 
-Improvement: All Pictures form; 
+New Module: Custom link, Style edit (CSS), Crontab, Contact; Improvement: All Pictures form;  Extension: 5 new Styles (Widget); Bugfix: PHP-Code form (On Thumbnail Click);
 
 == Changelog ==
 
-= Version 2.1 (November xx, 2013) =
+= Version 2.1 (November 08, 2013) =
 * New Module: Custom link
 * New Module: Style edit (CSS)
 * New Module: Crontab
 * New Module: Contact
 * Improvement: All Pictures form
+* Extension: 5 new Styles (Widget)
 * Bugfix: PHP-Code form (On Thumbnail Click)
 
 = Version 2.0.2 (October 27, 2013) =
@@ -110,8 +110,8 @@ Improvement: All Pictures form;
 * New Module: Lightbox
 * New Module: Remove images (public or not public)
 * New Module: Hover effect
+* Extension: 15 new Styles (Widget)
 * Improvement: Code revision
-* Improvement: 15 new Styles (Widget)
 * Improvement: Admin-Page Style
 * Improvement: Check whether there are enough pictures
 * Bugfix: Formular submit

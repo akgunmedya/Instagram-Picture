@@ -92,7 +92,8 @@ function instagram_picture_instagram()
 					
 					<div class="col-instagram-3_admin instagram-picture-box-in col-instagram-offset-1_admin">
 						<h4>Support & Feedback</h4>
-							<p>More information: <a href="?page=instagram_picture_contact">here</a> </p>
+							<p>More information: <a href="?page=instagram_picture_contact">here</a></p>
+							<p><b>We are also references</b></p>
 					</div>
 					
 				<div class="instagram_clear_admin"></div>

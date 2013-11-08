@@ -27,7 +27,7 @@ License: GPLv2 or later
 	$instagram_picture_variable["0"]  = "2.1"; 																// version
 	$instagram_picture_variable["5"]  = "25"; 																// optimized header angular (end of style-id)
 	$instagram_picture_variable["6"]  = "122";																// optimized header angular (round) (end of style-id)
-	$instagram_picture_variable["7"]  = "226";																// optimized widget angular (end of style-id)
+	$instagram_picture_variable["7"]  = "232";																// optimized widget angular (end of style-id)
 	
 	// links
 	$instagram_picture_variable["10"] = dirname(__FILE__); 												// File
@@ -63,7 +63,7 @@ License: GPLv2 or later
 			$table_name = $wpdb->prefix . "instagram_info";
 				// Version in database record
 				$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '$file_version')"); 	// Version
-				$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', 'off')"); 					 	// Cron Update
+				$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', '0')"); 					 	// Cron Update
 				
 			// databse instagram_user_info
 			$table_name = $wpdb->prefix . "instagram_user_info";
@@ -134,7 +134,7 @@ License: GPLv2 or later
 		
 		$wpdb->query("UPDATE $table_name Set text = '$file_version' WHERE id = '7'");			// Version
 		
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', 'off')"); 					 	// Cron Update
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', '0')"); 					 	// Cron Update
 	}
 
 ########################################################################################################################
@@ -175,7 +175,7 @@ License: GPLv2 or later
 		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('5', '0')"); 		// Image with title (for PHP-Code)
 		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('6', '0')"); 		// Border-Radius (for PHP-Code)
 		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('7', '2.1')"); 	// Version
-		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', 'off')"); 		// Cron
+		$wpdb->query("INSERT INTO $table_name (id, text) VALUES ('8', '0')"); 		// Cron
 	
 		// table name
 		$table_name = $wpdb->prefix . "instagram_bilder";
@@ -232,6 +232,8 @@ License: GPLv2 or later
   		Need help or have suggestions, please write us an e-mail to: support@tb-webtec.de
   
   		To stay current: Blog (http://tb-webtec.de/blog/), Facebook (http://www.facebook.com/TbWebtec) or Twitter (http://twitter.com/Tobias_Bohn)
+  		
+  		Please note we are also references to our website and fanpage. Simply write an email to: support@tb-webtec.de
 
 		Sincerely yours
 		Tobias Bohn";

@@ -13,7 +13,7 @@
 	.row-instagram:after{clear:both;}
 	.row-instagram:before,.row-instagram:after{display:block;}
 	.row-instagram:after{clear:both;}
-	.row-instagram img{max-width:100%;border: 0px;}
+	.row-instagram img{width:100%;border: 0px;}
 
 	/* Grid */
 	.col-instagram-1{width:8.333333333333332%;float: left;text-align: center;}
@@ -104,3 +104,15 @@
 /* Hover effect */
 .instagram-picture-hover img{opacity1;transition: opacity .5s ease-out;-moz-transition: opacity .5s ease-out;-webkit-transition: opacity .5s ease-out;-o-transition: opacity .5s ease-out;}
 .instagram-picture-hover img:hover{opacity: .5;}
+
+
+/* Widget: Instagram Picture User Infos */
+
+	/* main box */
+	.instagram-widget-user-info-main-box { padding:2%;color:#ffffff; margin:0; }	
+	
+	/* info box */
+	.instagram-widget-user-info-info-box { font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#133856;padding-top:5px;padding-bottom:5px; }
+	/* info box output */
+	.instagram-widget-user-info-info-box-output { font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#216195;padding-top:5px;padding-bottom:5px; }
+	

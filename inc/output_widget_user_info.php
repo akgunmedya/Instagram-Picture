@@ -185,22 +185,17 @@ function widget($instance, $instagram)
 
 		
 			echo '
-					<div style="background-color: #1c5380;padding:2%;color:#ffffff;">
-						<div class="row-instagram" style="padding: 0;margin:0;">
-							<div class="col-instagram-12" style="font-size:13px;padding-bottom:2.083333333333333%;font-weight:bold;">
-								<a href="http://instagram.com/'.$username.'" style="color:#ffffff;text-decoration:none;">'.$full_name.'</a>
-							</div>
-						</div>
+					<div class="instagram-widget-user-info-main-box">
 						<div class="row-instagram">
 							
 							<div class="col-instagram-4">
 								<div class="row-instagram">
-									<div class="col-instagram-12" style="font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#133856;padding-top:5px;padding-bottom:5px;">
+									<div class="col-instagram-12 instagram-widget-user-info-info-box">
 										Post									
 									</div>
 								</div>
 								<div class="row-instagram">
-									<div class="col-instagram-12" style="font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#216195;padding-top:5px;padding-bottom:5px;">
+									<div class="col-instagram-12 instagram-widget-user-info-info-box-output">
 										'.$media.'									
 									</div>
 								</div>
@@ -209,12 +204,12 @@ function widget($instance, $instagram)
 							
 							<div class="col-instagram-4">
 								<div class="row-instagram">
-									<div class="col-instagram-12" style="font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#133856;padding-top:5px;padding-bottom:5px;">
+									<div class="col-instagram-12 instagram-widget-user-info-info-box">
 										Followers									
 									</div>
 								</div>
 								<div class="row-instagram">
-									<div class="col-instagram-12" style="font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#216195;padding-top:5px;padding-bottom:5px;">
+									<div class="col-instagram-12 instagram-widget-user-info-info-box-output">
 										'.$followers.'									
 									</div>
 								</div>
@@ -222,12 +217,12 @@ function widget($instance, $instagram)
 							
 							<div class="col-instagram-4">
 								<div class="row-instagram">
-									<div class="col-instagram-12" style="font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#133856;padding-top:5px;padding-bottom:5px;">
+									<div class="col-instagram-12 instagram-widget-user-info-info-box">
 										Following									
 									</div>
 								</div>
 								<div class="row-instagram">
-									<div class="col-instagram-12" style="font-size:13px;box-shadow:1px 1px #1c4b80;background-color:#216195;padding-top:5px;padding-bottom:5px;">
+									<div class="col-instagram-12 instagram-widget-user-info-info-box-output">
 										'.$following.'									
 									</div>
 								</div>
@@ -236,13 +231,14 @@ function widget($instance, $instagram)
 						</div>
 						<div class="instagram_clear"></div>
 					</div>
+					<div class="instagram_clear"></div>
 			';	
 			
 		// Check whether with images
 		if($result_picture == "1")
 		{
 			$ausgabe = '
-			<div style="background-color: #2a7cbf;padding:2.083333333333333%;">
+			<div style="padding:2.083333333333333%;">
 				<div class="row-instagram">
 					<div class="col-instagram-3">
 						[01]
@@ -287,6 +283,7 @@ function widget($instance, $instagram)
 				</div>
 				<div class="instagram_clear"></div>
 			</div>
+			<div class="instagram_clear"></div>
 			';
 			
 			$i="1";

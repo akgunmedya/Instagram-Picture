@@ -33,7 +33,7 @@ function instagram_picture_aktualisieren()
    		// Cron query
    		$cron = $wpdb->get_var("SELECT text FROM $instagram_picture_variable[100] WHERE id='8'");
    		
-   		if($cron == "0"){ $cron_output="off";}
+   		if($cron == "0" OR empty($cron)){ $cron_output="off";}
    		if($cron == "1"){ $cron_output="on";}
 	
 		// If the data is present

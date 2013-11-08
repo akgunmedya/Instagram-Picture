@@ -3496,6 +3496,229 @@
 		}	
 		
 		
+		if($str == "226")
+		{ 
+			$str = '
+<div class="header_instagram">
+	<div class="header_in_instagram">
+	
+		<div class="row-instagram">
+			<div class="col-instagram-12">[01]</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-6">[02]</div>
+				<div class="col-instagram-6">[03]</div>
+			</div>
+		</div>
+			
+	</div>
+</div>
+<div class="instagram_clear"></div>';
+
+		$anzahl = '3';
+
+		}
+		
+		if($str == "227")
+		{ 
+			$str = '
+<div class="header_instagram">
+	<div class="header_in_instagram">
+	
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-6">[02]</div>
+				<div class="col-instagram-6">[03]</div>
+			</div>
+		</div>
+	
+		<div class="row-instagram">
+			<div class="col-instagram-12">[01]</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-6">[04]</div>
+				<div class="col-instagram-6">[05]</div>
+			</div>
+		</div>
+			
+	</div>
+</div>
+<div class="instagram_clear"></div>';
+
+		$anzahl = '5';
+
+		}
+		
+		if($str == "228")
+		{ 
+			$str = '
+<div class="header_instagram">
+	<div class="header_in_instagram">
+	
+		<div class="row-instagram">
+			<div class="col-instagram-12">[01]</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-4">[02]</div>
+				<div class="col-instagram-4">[03]</div>
+				<div class="col-instagram-4">[04]</div>
+			</div>
+		</div>
+			
+	</div>
+</div>
+<div class="instagram_clear"></div>';
+
+		$anzahl = '4';
+
+		}
+		
+		
+		if($str == "229")
+		{ 
+			$str = '
+<div class="header_instagram">
+	<div class="header_in_instagram">
+	
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-4">[02]</div>
+				<div class="col-instagram-4">[03]</div>
+				<div class="col-instagram-4">[04]</div>
+			</div>
+		</div>
+	
+		<div class="row-instagram">
+			<div class="col-instagram-12">[01]</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-4">[05]</div>
+				<div class="col-instagram-4">[06]</div>
+				<div class="col-instagram-4">[07]</div>
+			</div>
+		</div>
+			
+	</div>
+</div>
+<div class="instagram_clear"></div>';
+
+		$anzahl = '7';
+
+		}
+		
+		
+		if($str == "230")
+		{ 
+			$str = '
+<div class="header_instagram">
+	<div class="header_in_instagram">
+	
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-2">[02]</div>
+				<div class="col-instagram-2">[03]</div>
+				<div class="col-instagram-2">[04]</div>
+				<div class="col-instagram-2">[05]</div>
+				<div class="col-instagram-2">[06]</div>
+				<div class="col-instagram-2">[07]</div>
+			</div>
+		</div>
+	
+		<div class="row-instagram">
+			<div class="col-instagram-12">[01]</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-2">[08]</div>
+				<div class="col-instagram-2">[09]</div>
+				<div class="col-instagram-2">[10]</div>
+				<div class="col-instagram-2">[11]</div>
+				<div class="col-instagram-2">[12]</div>
+				<div class="col-instagram-2">[13]</div>
+			</div>
+		</div>
+			
+	</div>
+</div>
+<div class="instagram_clear"></div>';
+
+		$anzahl = '13';
+
+		}
+		
+		
+		if($str == "231")
+		{ 
+			$str = '
+<div class="header_instagram">
+	<div class="header_in_instagram">
+	
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-2">[02]</div>
+				<div class="col-instagram-2">[03]</div>
+				<div class="col-instagram-2">[04]</div>
+				<div class="col-instagram-2">[05]</div>
+				<div class="col-instagram-2">[06]</div>
+				<div class="col-instagram-2">[07]</div>
+			</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-2">[08]</div>
+				<div class="col-instagram-2">[09]</div>
+				<div class="col-instagram-2">[10]</div>
+				<div class="col-instagram-2">[11]</div>
+				<div class="col-instagram-2">[12]</div>
+				<div class="col-instagram-2">[13]</div>
+			</div>
+		</div>
+	
+		<div class="row-instagram">
+			<div class="col-instagram-12">[01]</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-2">[14]</div>
+				<div class="col-instagram-2">[15]</div>
+				<div class="col-instagram-2">[16]</div>
+				<div class="col-instagram-2">[17]</div>
+				<div class="col-instagram-2">[18]</div>
+				<div class="col-instagram-2">[19]</div>
+			</div>
+		</div>
+		
+		<div class="col-instagram-12">
+			<div class="row-instagram">
+				<div class="col-instagram-2">[20]</div>
+				<div class="col-instagram-2">[21]</div>
+				<div class="col-instagram-2">[22]</div>
+				<div class="col-instagram-2">[23]</div>
+				<div class="col-instagram-2">[24]</div>
+				<div class="col-instagram-2">[25]</div>
+			</div>
+		</div>
+			
+	</div>
+</div>
+<div class="instagram_clear"></div>';
+
+		$anzahl = '25';
+
+		}
+		
+		
 		
 		
 		$str = preg_replace("#(\r|\n)#", '', $str);

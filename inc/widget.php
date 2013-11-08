@@ -266,11 +266,12 @@ function instagram_picture_widget() {
 							<h3>All styles</h3>
 							<p>The styles-ids for the widget</p>
 						</div>
-						<table style="width:300px;margin:0 auto;">
+						<table style="width:300px;margin:0 auto;padding:5px; border:1px solid;">
 				';
 	
 				$style_ende=$instagram_picture_variable[7];
 		
+				$class_id = '1';
 				for ($style = 200; $style < $style_ende; $style++)
 				{
 					$result_grid = grid($style);
@@ -283,12 +284,15 @@ function instagram_picture_widget() {
 					$i="1";
 					$limit = $anzahl;
 					
+					// CSS-Class
+					$class = ($class_id % 2) ? "#FFFFFF" : "#E0E0E0";
+					
 					// Compare whether there are enough pictures
 					
 					if($limit > $count_picture)
 					{
 						echo '
-						<tr>
+						<tr style="background-color:'.$class.';">
 							<td>Not enough pictures<hr/></td>
 							<td style="width:80px;"></td>
 						</tr>
@@ -310,13 +314,14 @@ function instagram_picture_widget() {
    						$i++;
   	 					}
 						echo '
-						<tr>
+						<tr style="background-color:'.$class.';">
 							<td>'.$output.'<hr/></td>
 							<td style="width:80px;">Style-ID:<br><b>'.$style.'</b></td>
 						</tr>
 						';
 			
 					}
+					$class_id++;
 				}
 	
 			echo '</table></div>';
