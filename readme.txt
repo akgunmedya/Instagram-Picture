@@ -2,8 +2,8 @@
 Contributors: Tobias Bohn
 Donate link: http://ipic.tb-webtec.de/donate.php
 Tags: instagram, header, responsiv, widget, picture, image, sidebar, gallery, embed, embedded, Foto, Bilder, Shortcode
-Stable tag: 2.1
-Tested up to: 3.6
+Stable tag: 2.1.1
+Tested up to: 3.7.1
 Requires at least: 3.0
 
 Your Instagram photos for your blog
@@ -91,6 +91,9 @@ No. This plugin only saves the path to the picture in the database. The image it
 New Module: Custom link, Style edit (CSS), Crontab, Contact; Improvement: All Pictures form;  Extension: 5 new Styles (Widget); Bugfix: PHP-Code form (On Thumbnail Click);
 
 == Changelog ==
+
+= Version 2.1.1 (November 09, 2013) =
+* Bugfix: Style shift
 
 = Version 2.1 (November 08, 2013) =
 * New Module: Custom link

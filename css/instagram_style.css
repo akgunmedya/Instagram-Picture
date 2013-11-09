@@ -14,7 +14,8 @@
 	.row-instagram:before,.row-instagram:after{display:block;}
 	.row-instagram:after{clear:both;}
 	.row-instagram img{width:100%;border: 0px;}
-
+	.instagram_clear { clear: both; }
+	
 	/* Grid */
 	.col-instagram-1{width:8.333333333333332%;float: left;text-align: center;}
 	.col-instagram-2{width:16.666666666666664%;float: left;text-align: center;}
